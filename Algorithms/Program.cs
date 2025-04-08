@@ -10,18 +10,38 @@ for (int i = 0; i < cards2.Length; i++)
 }
 
 // int[] cards = {3, 5, 7, 8, 9};
-int query = 7;
+int query = 9;
 
-var result = FindCardLocation(cards, query);
+var result = FindCardLocationBinarySearch(cards, query);
 Console.WriteLine("Index von gesuchtem Element in cards: " + result);
-Console.WriteLine(cards2[10]);
-var result2 = FindCardLocation(cards2, 40_942_069); // 40_942_068
+// Console.WriteLine(cards2[10]);
+var result2 = FindCardLocationBinarySearch(cards2, 40_942_069); // 40_942_068
 Console.WriteLine("Index von gesuchtem Element in cards2: " + result2);
 
 // Binary Search => O(log(n))
 int FindCardLocationBinarySearch(int[] cards, int query)
 {
-    // todo: implementiere die gleiche funktionalität wie in FindCardLocation, aber mit Binary Search
+    int min = 0;
+    int max = cards.Length - 1;
+
+    while (min <= max)
+    {
+        int mid = (min + max) / 2;
+
+        if (query == cards[mid])
+        {
+            return mid;
+        }
+        else if (query < cards[mid])
+        {
+            max = mid - 1;
+        }
+        else
+        {
+            min = mid + 1;
+        }
+    }
+    return -1;
 }
 
 // Linear Search => O(n)
