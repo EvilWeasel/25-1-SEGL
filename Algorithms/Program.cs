@@ -21,4 +21,6 @@ Console.WriteLine("Index von gesuchtem Element in cards2: " + result2);
 */
 using BenchmarkDotNet.Running;
 
+// var algos = new Algorithms();
+
 var summary = BenchmarkRunner.Run<Algorithms>();
