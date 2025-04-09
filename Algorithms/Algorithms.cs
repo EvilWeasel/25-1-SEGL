@@ -22,6 +22,10 @@ public class Algorithms
     {
         FindCardLocationLinearSearch(cards, 49_942_069); // 49_942_068
     }
+    public static int[] InsertionSort(int[] unsortedArray)
+    {
+        return new int[0];
+    }
     public static int FindCardLocationBinarySearch(int[] cards, int query)
     {
         int min = 0;
